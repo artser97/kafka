@@ -23,4 +23,10 @@ public class KafkaProducerController {
   {
     this.producerService.sendMessage(message);
   }
+
+  @PostMapping(value = "/publishRecord")
+  public void sendRecordToKafkaTopic(@RequestParam("message") String message)
+  {
+    this.producerService.sendRecord(message);
+  }
 }
